@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Gallery | CodeAlpha</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page-header">
+  <div class="header-bg"></div>
+  <div class="header-content">
+    <div class="brand">CODE<span>ALPHA</span></div>
+    <h1>Image Gallery</h1>
+    <p class="subtitle">A curated collection — click any photo to view</p>
+  </div>
+</div>
+
+<div class="filters">
+  <button class="filter-btn active" data-filter="all">All <span class="count" id="count-all"></span></button>
+  <button class="filter-btn" data-filter="cars">Cars <span class="count" id="count-cars"></span></button>
+  <button class="filter-btn" data-filter="nature">Nature <span class="count" id="count-nature"></span></button>
+  <button class="filter-btn" data-filter="animals">Animals <span class="count" id="count-animals"></span></button>
+  <button class="filter-btn" data-filter="mountains">Mountains <span class="count" id="count-mountains"></span></button>
+  <button class="filter-btn" data-filter="ocean">Ocean <span class="count" id="count-ocean"></span></button>
+</div>
+
+<div class="gallery-wrapper" id="gallery-wrapper">
+
+  <!-- ALL PHOTOS SECTION (auto-built by script.js, don't edit manually) -->
+  <section class="category-block active-section" id="section-all">
+    <h2 class="category-title">All Photos</h2>
+    <div class="gallery" id="gallery-all"></div>
+  </section>
+
+  <!-- CARS -->
+  <section class="category-block" id="section-cars" data-category="cars">
+    <h2 class="category-title">🚗 Cars</h2>
+    <div class="gallery" id="gallery-cars">
+
+     <div class="gallery-item" data-category="cars">
+  <img src="images/car1.jpg" alt="Car Photo 1">
+  <div class="overlay"><span class="overlay-title">Car Photo 1</span><span class="overlay-cat">Cars</span></div>
+</div>
+
+<div class="gallery-item" data-category="cars">
+  <img src="images/car2.jpg" alt="Car Photo 2">
+  <div class="overlay"><span class="overlay-title">Car Photo 2</span><span class="overlay-cat">Cars</span></div>
+</div>
+
+<div class="gallery-item" data-category="cars">
+  <img src="images/car3.jpg" alt="Car Photo 3">
+  <div class="overlay"><span class="overlay-title">Car Photo 3</span><span class="overlay-cat">Cars</span></div>
+</div>
+
+<div class="gallery-item" data-category="cars">
+  <img src="images/car4.jpg" alt="Car Photo 4">
+  <div class="overlay"><span class="overlay-title">Car Photo 4</span><span class="overlay-cat">Cars</span></div>
+</div>
+
+<div class="gallery-item" data-category="cars">
+  <img src="images/car5.jpg" alt="Car Photo 5">
+  <div class="overlay"><span class="overlay-title">Car Photo 5</span><span class="overlay-cat">Cars</span></div>
+</div>
+    </div>
+    <p class="no-photos" id="no-photos-cars">No photos yet</p>
+  </section>
+
+  <!-- NATURE -->
+  <section class="category-block" id="section-nature" data-category="nature">
+    <h2 class="category-title">🌿 Nature</h2>
+    <div class="gallery" id="gallery-nature">
+
+<div class="gallery-item" data-category="nature">
+  <img src="images/nature1.jpg" alt="Nature Photo 1">
+  <div class="overlay"><span class="overlay-title">Nature Photo 1</span><span class="overlay-cat">Nature</span></div>
+</div>
+
+<div class="gallery-item" data-category="nature">
+  <img src="images/nature2.jpg" alt="Nature Photo 2">
+  <div class="overlay"><span class="overlay-title">Nature Photo 2</span><span class="overlay-cat">Nature</span></div>
+</div>
+
+<div class="gallery-item" data-category="nature">
+  <img src="images/nature3.jpg" alt="Nature Photo 3">
+  <div class="overlay"><span class="overlay-title">Nature Photo 3</span><span class="overlay-cat">Nature</span></div>
+</div>
+
+<div class="gallery-item" data-category="nature">
+  <img src="images/nature4.jpg" alt="Nature Photo 4">
+  <div class="overlay"><span class="overlay-title">Nature Photo 4</span><span class="overlay-cat">Nature</span></div>
+</div>
+
+<div class="gallery-item" data-category="nature">
+  <img src="images/nature5.jpg" alt="Nature Photo 5">
+  <div class="overlay"><span class="overlay-title">Nature Photo 5</span><span class="overlay-cat">Nature</span></div>
+</div>
+    </div>
+    <p class="no-photos" id="no-photos-nature">No photos yet</p>
+  </section>
+
+  <!-- ANIMALS -->
+  <section class="category-block" id="section-animals" data-category="animals">
+    <h2 class="category-title">🐾 Animals</h2>
+    <div class="gallery" id="gallery-animals">
+
+<div class="gallery-item" data-category="animals">
+  <img src="images/animal1.jpg" alt="Animal Photo 1">
+  <div class="overlay"><span class="overlay-title">Animal Photo 1</span><span class="overlay-cat">Animals</span></div>
+</div>
+
+<div class="gallery-item" data-category="animals">
+  <img src="images/animal2.jpg" alt="Animal Photo 2">
+  <div class="overlay"><span class="overlay-title">Animal Photo 2</span><span class="overlay-cat">Animals</span></div>
+</div>
+
+<div class="gallery-item" data-category="animals">
+  <img src="images/animal3.jpg" alt="Animal Photo 3">
+  <div class="overlay"><span class="overlay-title">Animal Photo 3</span><span class="overlay-cat">Animals</span></div>
+</div>
+
+<div class="gallery-item" data-category="animals">
+  <img src="images/animal4.jpg" alt="Animal Photo 4">
+  <div class="overlay"><span class="overlay-title">Animal Photo 4</span><span class="overlay-cat">Animals</span></div>
+</div>
+
+<div class="gallery-item" data-category="animals">
+  <img src="images/animal5.jpg" alt="Animal Photo 5">
+  <div class="overlay"><span class="overlay-title">Animal Photo 5</span><span class="overlay-cat">Animals</span></div>
+</div>
+    </div>
+    <p class="no-photos" id="no-photos-animals">No photos yet</p>
+  </section>
+
+  <!-- MOUNTAINS -->
+  <section class="category-block" id="section-mountains" data-category="mountains">
+    <h2 class="category-title">⛰ Mountains</h2>
+    <div class="gallery" id="gallery-mountains">
+
+<div class="gallery-item" data-category="mountains">
+  <img src="images/mountain1.jpg" alt="Mountain Photo 1">
+  <div class="overlay"><span class="overlay-title">Mountain Photo 1</span><span class="overlay-cat">Mountains</span></div>
+</div>
+
+<div class="gallery-item" data-category="mountains">
+  <img src="images/mountain2.jpg" alt="Mountain Photo 2">
+  <div class="overlay"><span class="overlay-title">Mountain Photo 2</span><span class="overlay-cat">Mountains</span></div>
+</div>
+
+<div class="gallery-item" data-category="mountains">
+  <img src="images/mountain3.jpg" alt="Mountain Photo 3">
+  <div class="overlay"><span class="overlay-title">Mountain Photo 3</span><span class="overlay-cat">Mountains</span></div>
+</div>
+
+<div class="gallery-item" data-category="mountains">
+  <img src="images/mountain4.jpg" alt="Mountain Photo 4">
+  <div class="overlay"><span class="overlay-title">Mountain Photo 4</span><span class="overlay-cat">Mountains</span></div>
+</div>
+
+<div class="gallery-item" data-category="mountains">
+  <img src="images/mountain5.jpg" alt="Mountain Photo 5">
+  <div class="overlay"><span class="overlay-title">Mountain Photo 5</span><span class="overlay-cat">Mountains</span></div>
+</div>
+    </div>
+    <p class="no-photos" id="no-photos-mountains">No photos yet</p>
+  </section>
+
+  <!-- OCEAN -->
+  <section class="category-block" id="section-ocean" data-category="ocean">
+    <h2 class="category-title">🌊 Ocean</h2>
+    <div class="gallery" id="gallery-ocean">
+
+<div class="gallery-item" data-category="ocean">
+  <img src="images/ocean1.jpg" alt="Ocean Photo 1">
+  <div class="overlay"><span class="overlay-title">Ocean Photo 1</span><span class="overlay-cat">Ocean</span></div>
+</div>
+
+<div class="gallery-item" data-category="ocean">
+  <img src="images/ocean2.jpg" alt="Ocean Photo 2">
+  <div class="overlay"><span class="overlay-title">Ocean Photo 2</span><span class="overlay-cat">Ocean</span></div>
+</div>
+
+<div class="gallery-item" data-category="ocean">
+  <img src="images/ocean3.jpg" alt="Ocean Photo 3">
+  <div class="overlay"><span class="overlay-title">Ocean Photo 3</span><span class="overlay-cat">Ocean</span></div>
+</div>
+
+<div class="gallery-item" data-category="ocean">
+  <img src="images/ocean4.jpg" alt="Ocean Photo 4">
+  <div class="overlay"><span class="overlay-title">Ocean Photo 4</span><span class="overlay-cat">Ocean</span></div>
+</div>
+
+<div class="gallery-item" data-category="ocean">
+  <img src="images/ocean5.jpg" alt="Ocean Photo 5">
+  <div class="overlay"><span class="overlay-title">Ocean Photo 5</span><span class="overlay-cat">Ocean</span></div>
+</div>
+    </div>
+    <p class="no-photos" id="no-photos-ocean">No photos yet</p>
+  </section>
+
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <span class="close-btn" id="close-btn">&times;</span>
+  <span class="nav-btn prev-btn" id="prev-btn">&#10094;</span>
+  <div class="lightbox-content">
+    <img src="" id="lightbox-img" alt="Preview">
+
+    <div class="filter-bar">
+      <button class="filter-opt active" data-filter="none">Normal</button>
+      <button class="filter-opt" data-filter="bw">B&amp;W</button>
+      <button class="filter-opt" data-filter="vivid">Vivid</button>
+      <button class="filter-opt" data-filter="sepia">Tint</button>
+      <button class="filter-opt" data-filter="cool">Blue</button>
+    </div>
+
+    <div class="lightbox-caption">
+      <span id="lightbox-title"></span>
+      <span id="lightbox-counter" class="lightbox-counter"></span>
+    </div>
+  </div>
+  <span class="nav-btn next-btn" id="next-btn">&#10095;</span>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

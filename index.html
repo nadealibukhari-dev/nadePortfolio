@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Syed Nadeali Bukhari — Frontend Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+  <div class="wrap">
+    <a href="#home" class="logo">N<em>.</em></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="mobile-hire">Hire me</a>
+    </nav>
+    <a href="#contact" class="nav-cta">Hire me</a>
+    <button class="menu-btn" id="menuBtn">☰</button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id="home" class="hero">
+  <div class="wrap">
+    <div>
+      <p class="hero-affil">Computer Science · Lahore Garrison University</p>
+      <h1>Syed Nadeali<br>Imam Bukhari<span class="last"></span></h1>
+      <p class="typed-role"><span id="typedText"></span><span class="cursor-blink"></span></p>
+      <p class="hero-desc">BSCS student building interactive, responsive web experiences with HTML, CSS and JavaScript — grounded in a strong foundation of data structures, databases and systems programming.</p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn-primary">View my work</a>
+        <a href="#contact" class="btn-ghost">Get in touch</a>
+      </div>
+      <div class="hero-meta">
+        <div><strong>02</strong><span>Live projects</span></div>
+        <div><strong>08+</strong><span>Languages &amp; tools</span></div>
+        <div><strong>2028</strong><span>Graduating</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="photo-frame" id="photoFrame">
+        <img src="nadeali.jpg" alt="Syed Nadeali Bukhari" onerror="document.getElementById('photoFrame').classList.add('no-photo')">
+        <span class="frame-corner tl"></span>
+        <span class="frame-corner br"></span>
+      </div>
+
+      <div class="ledger-card mini">
+        <div class="ledger-head">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <p style="margin-left:6px;">profile.js</p>
+        </div>
+        <div class="ledger-body">
+          <p><span class="num">01</span> <span class="k">const</span> nady = {</p>
+          <p><span class="num">02</span> &nbsp;&nbsp;role: <span class="s">"Frontend Dev"</span>,</p>
+          <p><span class="num">03</span> &nbsp;&nbsp;degree: <span class="s">"BSCS '28"</span></p>
+          <p><span class="num">04</span> };</p>
+        </div>
+      </div>
+
+      <div class="floating-badge">Currently<br><strong>5th Semester</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee-strip">
+  <div class="marquee-track" id="marqueeTrack">
+    <span>
+      <i>HTML5</i><i>CSS3</i><i>JavaScript</i><i>C++</i><i>C</i><i>8086 Assembly</i><i>SQL</i><i>Data Structures</i><i>Git &amp; GitHub</i><i>Responsive Design</i>
+    </span>
+    <span>
+      <i>HTML5</i><i>CSS3</i><i>JavaScript</i><i>C++</i><i>C</i><i>8086 Assembly</i><i>SQL</i><i>Data Structures</i><i>Git &amp; GitHub</i><i>Responsive Design</i>
+    </span>
+  </div>
+</div>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section about-section">
+  <div class="wrap">
+    <div class="about-text reveal">
+      <p class="lead">I turn ideas into interfaces — and I enjoy the CS underneath them just as much as the pixels on top.</p>
+      <p>I'm a Computer Science student at Lahore Garrison University with a particular interest in frontend development. Alongside building responsive interfaces with semantic HTML, modern CSS and vanilla JavaScript, I've spent my degree working through data structures, databases, computer organization and automata theory — the kind of foundation that makes the interfaces I build not just look right, but work right.</p>
+      <p>I completed a Frontend Developer internship focused on responsive layouts, UI design, animations and hover interactions, which is where this portfolio itself took shape.</p>
+      <div class="about-status">Expecting to start 5th semester — September 2026</div>
+    </div>
+
+    <div class="reveal">
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="years">2024 — 2028</span>
+          <h3>BS Computer Science</h3>
+          <p>Lahore Garrison University · Currently progressing through core CS coursework alongside independent frontend projects.</p>
+          <div class="chip-row">
+            <span class="chip">Data Structures &amp; Algorithms</span>
+            <span class="chip">Database Systems</span>
+            <span class="chip">Theory of Automata</span>
+            <span class="chip">Computer Organization &amp; Assembly</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="years">Internship</span>
+          <h3>Frontend Developer Intern</h3>
+          <p>Built and refined responsive websites — focusing on clean UI, smooth scrolling, hover states and small interaction details.</p>
+          <div class="chip-row">
+            <span class="chip">HTML / CSS / JS</span>
+            <span class="chip">Responsive Layouts</span>
+            <span class="chip">Web Animation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills" class="section" style="background:var(--panel-2);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="index">What I work with</span>
+      <h2>A toolkit built on fundamentals.</h2>
+      <p>Frontend craft on the surface, backed by the programming and systems knowledge underneath it.</p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-block reveal">
+        <h3>Frontend</h3>
+        <div class="bar-row"><div class="bar-label"><span>HTML5</span><span>92%</span></div><div class="bar-track"><div class="bar-fill" data-width="92"></div></div></div>
+        <div class="bar-row"><div class="bar-label"><span>CSS3</span><span>88%</span></div><div class="bar-track"><div class="bar-fill" data-width="88"></div></div></div>
+        <div class="bar-row"><div class="bar-label"><span>JavaScript</span><span>80%</span></div><div class="bar-track"><div class="bar-fill" data-width="80"></div></div></div>
+      </div>
+
+      <div class="skill-block reveal">
+        <h3>Programming</h3>
+        <div class="tag-cloud">
+          <span class="chip">C++</span>
+          <span class="chip">C</span>
+          <span class="chip">8086 Assembly</span>
+          <span class="chip">SQL</span>
+        </div>
+      </div>
+
+      <div class="skill-block reveal">
+        <h3>Concepts &amp; Tools</h3>
+        <div class="tag-cloud">
+          <span class="chip">Data Structures</span>
+          <span class="chip">Algorithms</span>
+          <span class="chip">Database Design</span>
+          <span class="chip">Git &amp; GitHub</span>
+          <span class="chip">Responsive Design</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="index">Selected work</span>
+      <h2>Things I've built.</h2>
+      <p>Two frontend projects that show how I structure interfaces and handle logic in the browser.</p>
+    </div>
+
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <div class="project-preview">
+          <span class="project-index">01</span>
+          <div class="calc-mock">
+            <div class="calc-display">128 + 42.5<span class="result">170.5</span></div>
+            <div class="calc-keys">
+              <b>AC</b><b>⌫</b><b>%</b><b class="op">÷</b>
+              <b>7</b><b>8</b><b>9</b><b class="op">×</b>
+              <b>4</b><b>5</b><b>6</b><b class="op">−</b>
+              <b>1</b><b>2</b><b>3</b><b class="op">+</b>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          <h3>Advanced Calculator</h3>
+          <p>A calculator web app that goes beyond basic arithmetic — mathematical, scientific and statistical operations, plus a built-in currency converter, in one interactive interface.</p>
+          <div class="project-links">
+            <a href="CodeAlpha_Calculator/index.html" target="_blank" rel="noopener">Live demo</a>
+            <a href="#contact" class="secondary">Discuss project</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-preview">
+          <span class="project-index">02</span>
+          <div class="gallery-mock">
+            <div class="fake-dots"><span></span><span></span><span></span></div>
+            <div class="gallery-grid-mini">
+              <div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          <h3>Interactive Gallery</h3>
+          <p>A responsive image gallery with a clean layout and interactive JavaScript behaviour — built to hold up cleanly across screen sizes.</p>
+          <div class="project-links">
+            <a href="CodeAlpha_ImageGallery/index.html" target="_blank" rel="noopener">Live demo</a>
+            <a href="#contact" class="secondary">Discuss project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BEYOND THE BROWSER ================= -->
+<section class="section" style="background:var(--panel-2);padding-top:100px;padding-bottom:100px;">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="index">Beyond the browser</span>
+      <h2>Coursework that shapes how I build.</h2>
+      <p>Smaller academic projects across core CS subjects — the reasoning behind the interfaces.</p>
+    </div>
+
+    <div class="course-grid">
+      <div class="course-card reveal">
+        <h4>Data Structures</h4>
+        <p>Linked lists, stacks, queues, AVL trees and graphs — implemented from scratch, with sorting algorithms like merge and quick sort.</p>
+      </div>
+      <div class="course-card reveal">
+        <h4>Databases</h4>
+        <p>Relational database design and SQL, including a banking/loan system project covering transactions and concurrency.</p>
+      </div>
+      <div class="course-card reveal">
+        <h4>Assembly (8086)</h4>
+        <p>Low-level programs using INT 21H and memory addressing — including a restaurant menu system and a number-guessing program.</p>
+      </div>
+      <div class="course-card reveal">
+        <h4>Theory of Automata</h4>
+        <p>Regular expressions, NFAs, context-free grammars, CNF and pushdown automata — the theory behind how languages are processed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="index">How I work</span>
+      <h2>Simple. Focused. Effective.</h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-card reveal">
+        <span class="step-num">01</span>
+        <h3>Understand</h3>
+        <p>Get clear on the goal, the user and the constraints before writing a line of code.</p>
+      </div>
+      <div class="process-card reveal">
+        <span class="step-num">02</span>
+        <h3>Build</h3>
+        <p>Turn the idea into a clean, responsive and interactive interface, one section at a time.</p>
+      </div>
+      <div class="process-card reveal">
+        <span class="step-num">03</span>
+        <h3>Refine</h3>
+        <p>Test across screen sizes, tighten the details, and polish until it feels right.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="section" style="padding-bottom:60px;">
+  <div class="contact-section">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="index" style="font-family:var(--mono);font-size:12.5px;display:block;margin-bottom:14px;">Get in touch</span>
+        <h2>Have a project<br>in mind?</h2>
+        <p class="hero-desc" style="margin-top:18px;">I'm open to frontend development opportunities, internships and interesting projects to collaborate on.</p>
+      </div>
+      <div class="contact-links reveal">
+        <a href="mailto:nadealishah313@gmail.com">
+          <small>Email</small>
+          <strong>nadealishah313@gmail.com</strong>
+        </a>
+        <a href="https://www.linkedin.com/in/syed-nadeali-bukhari-516584423" target="_blank" rel="noopener">
+          <small>LinkedIn</small>
+          <strong>Connect with me</strong>
+        </a>
+        <a href="resume.pdf" target="_blank">
+          <small>Resume</small>
+          <strong>Download my CV</strong>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <a href="#home" class="logo" style="font-size:19px;">N<em>.</em></a>
+    <p>Designed &amp; built with HTML, CSS &amp; JavaScript · © <span id="year"></span> Nady</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

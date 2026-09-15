@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scientific Calculator | CodeAlpha</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-watermark">CODEALPHA</div>
+
+<div class="calculator">
+
+  <div class="top-bar">
+    <div class="brand">CODE<span>ALPHA</span></div>
+    <div class="mode-switch">
+      <button class="mode-btn active" data-mode="DEG">DEG</button>
+      <button class="mode-btn" data-mode="RAD">RAD</button>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="basic">Basic</button>
+    <button class="tab-btn" data-tab="scientific">Scientific</button>
+    <button class="tab-btn" data-tab="stats">Statistics</button>
+    <button class="tab-btn" data-tab="currency">Currency</button>
+  </div>
+
+  <div class="screen">
+    <div class="memory-indicator" id="memory-indicator"></div>
+    <div class="previous-operand" id="previous-operand"></div>
+    <div class="current-operand" id="current-operand">0</div>
+  </div>
+
+  <!-- BASIC PANEL -->
+  <div class="panel basic-panel active-panel">
+    <div class="buttons basic-grid">
+      <button class="btn func" data-action="mc">MC</button>
+      <button class="btn func" data-action="mr">MR</button>
+      <button class="btn func" data-action="mplus">M+</button>
+      <button class="btn func" data-action="mminus">M-</button>
+
+      <button class="btn clear" data-action="clear">AC</button>
+      <button class="btn delete" data-action="delete">DEL</button>
+      <button class="btn percent" data-action="percent">%</button>
+      <button class="btn operator" data-action="operator" data-value="/">÷</button>
+
+      <button class="btn number" data-value="7">7</button>
+      <button class="btn number" data-value="8">8</button>
+      <button class="btn number" data-value="9">9</button>
+      <button class="btn operator" data-action="operator" data-value="*">×</button>
+
+      <button class="btn number" data-value="4">4</button>
+      <button class="btn number" data-value="5">5</button>
+      <button class="btn number" data-value="6">6</button>
+      <button class="btn operator" data-action="operator" data-value="-">−</button>
+
+      <button class="btn number" data-value="1">1</button>
+      <button class="btn number" data-value="2">2</button>
+      <button class="btn number" data-value="3">3</button>
+      <button class="btn operator" data-action="operator" data-value="+">+</button>
+
+      <button class="btn number" data-action="sign">+/-</button>
+      <button class="btn number" data-value="0">0</button>
+      <button class="btn number" data-value=".">.</button>
+      <button class="btn equals" data-action="equals">=</button>
+    </div>
+  </div>
+
+  <!-- SCIENTIFIC PANEL -->
+  <div class="panel scientific-panel">
+    <div class="buttons sci-grid">
+      <button class="btn sci" data-action="func" data-value="sin">sin</button>
+      <button class="btn sci" data-action="func" data-value="cos">cos</button>
+      <button class="btn sci" data-action="func" data-value="tan">tan</button>
+      <button class="btn sci" data-action="func" data-value="log">log</button>
+      <button class="btn sci" data-action="func" data-value="ln">ln</button>
+
+      <button class="btn sci" data-action="func" data-value="asin">sin⁻¹</button>
+      <button class="btn sci" data-action="func" data-value="acos">cos⁻¹</button>
+      <button class="btn sci" data-action="func" data-value="atan">tan⁻¹</button>
+      <button class="btn sci" data-action="func" data-value="sqrt">√</button>
+      <button class="btn sci" data-action="func" data-value="cbrt">∛</button>
+
+      <button class="btn sci" data-action="pow2">x²</button>
+      <button class="btn sci" data-action="pow3">x³</button>
+      <button class="btn sci" data-action="operator" data-value="^">xʸ</button>
+      <button class="btn sci" data-action="inverse">1/x</button>
+      <button class="btn sci" data-action="fact">n!</button>
+
+      <button class="btn sci" data-action="const" data-value="pi">π</button>
+      <button class="btn sci" data-action="const" data-value="e">e</button>
+      <button class="btn sci" data-action="paren" data-value="(">(</button>
+      <button class="btn sci" data-action="paren" data-value=")">)</button>
+      <button class="btn sci" data-action="frac">a/b</button>
+
+      <button class="btn clear wide-2" data-action="clear">AC</button>
+      <button class="btn delete wide-2" data-action="delete">DEL</button>
+      <button class="btn equals wide" data-action="equals">=</button>
+    </div>
+  </div>
+
+  <!-- STATISTICS PANEL -->
+  <div class="panel stats-panel">
+    <div class="stats-entry">
+      <input type="text" id="stats-input" placeholder="e.g. 4,8,15,16,23,42" />
+      <button class="btn stats-add" id="stats-add-btn">Add Data</button>
+    </div>
+    <div class="stats-list" id="stats-list">No data yet</div>
+    <div class="stats-results" id="stats-results"></div>
+    <div class="buttons stats-actions">
+      <button class="btn func" id="stats-calc-btn">Calculate</button>
+      <button class="btn clear" id="stats-clear-btn">Clear Data</button>
+    </div>
+  </div>
+
+  <!-- CURRENCY PANEL -->
+  <div class="panel currency-panel">
+    <div class="currency-row">
+      <label>Amount</label>
+      <input type="number" id="currency-amount" value="1" min="0" step="0.01" />
+    </div>
+
+    <div class="currency-row currency-row-two">
+      <div>
+        <label>From</label>
+        <select id="currency-from">
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+          <option value="JPY">JPY</option>
+          <option value="INR" selected>INR</option>
+          <option value="AUD">AUD</option>
+          <option value="CAD">CAD</option>
+          <option value="PKR">PKR</option>
+          <option value="AED">AED</option>
+          <option value="CNY">CNY</option>
+        </select>
+      </div>
+
+      <button class="btn swap-btn" id="currency-swap-btn" title="Swap currencies">⇅</button>
+
+      <div>
+        <label>To</label>
+        <select id="currency-to">
+          <option value="USD" selected>USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+          <option value="JPY">JPY</option>
+          <option value="INR">INR</option>
+          <option value="AUD">AUD</option>
+          <option value="CAD">CAD</option>
+          <option value="PKR">PKR</option>
+          <option value="AED">AED</option>
+          <option value="CNY">CNY</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="btn func currency-convert" id="currency-convert-btn">Convert</button>
+    <div class="currency-result" id="currency-result">1 INR = 0.012 USD</div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

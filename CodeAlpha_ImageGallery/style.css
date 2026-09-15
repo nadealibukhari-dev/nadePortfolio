@@ -1,0 +1,412 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  background: #07070d;
+  color: #f0f0f5;
+  padding-bottom: 70px;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://picsum.photos/seed/mountainlights/1600/700');
+  background-size: cover;
+  background-position: center;
+  filter: blur(30px) brightness(0.25);
+  transform: scale(1.2);
+  z-index: -1;
+}
+
+/* ---------- HEADER WITH BLURRED BACKGROUND ---------- */
+.page-header {
+  position: relative;
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+.header-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://picsum.photos/seed/mountainlights/1600/700');
+  background-size: cover;
+  background-position: center;
+  filter: blur(14px) brightness(0.4) saturate(1.2);
+  transform: scale(1.15);
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.brand {
+  font-size: 1.6rem;
+  letter-spacing: 6px;
+  color: #7fffd4;
+  font-weight: 900;
+  text-shadow: 0 0 20px rgba(127,255,212,0.8), 0 0 40px rgba(127,255,212,0.4);
+  margin-bottom: 18px;
+}
+
+.brand span {
+  color: #ff5fa2;
+  text-shadow: 0 0 20px rgba(255,95,162,0.8), 0 0 40px rgba(255,95,162,0.4);
+}
+
+.page-header h1 {
+  font-size: 2.6rem;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(0,0,0,0.8);
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #ccc;
+  font-size: 0.95rem;
+  text-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+/* ---------- FILTERS (category filter buttons) ---------- */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+  padding: 0 5%;
+}
+
+.filter-btn {
+  padding: 10px 22px;
+  border: 1px solid rgba(127,255,212,0.2);
+  border-radius: 25px;
+  background: #12121e;
+  color: #ddd;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  border-color: rgba(127,255,212,0.6);
+  box-shadow: 0 0 12px rgba(127,255,212,0.25);
+}
+
+.filter-btn.active {
+  background: linear-gradient(145deg, #ff9f43, #e8850f);
+  color: #1a1200;
+  border-color: transparent;
+  box-shadow: 0 0 16px rgba(255,159,67,0.5);
+}
+
+.count {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+/* ---------- CATEGORY BLOCKS ---------- */
+.gallery-wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.category-block {
+  margin-bottom: 55px;
+  background: rgba(18, 18, 30, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(127,255,212,0.12);
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 0 0 40px rgba(0,255,200,0.06), 0 20px 40px rgba(0,0,0,0.35);
+}
+
+.category-block.hidden {
+  display: none;
+}
+
+.category-title {
+  font-size: 1.3rem;
+  color: #7fffd4;
+  text-shadow: 0 0 14px rgba(127,255,212,0.5);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.category-block[data-category="cars"] .category-title {
+  color: #ff9f43;
+  text-shadow: 0 0 14px rgba(255,159,67,0.5);
+}
+
+.category-block[data-category="animals"] .category-title {
+  color: #d8a8ff;
+  text-shadow: 0 0 14px rgba(216,168,255,0.5);
+}
+
+.category-block[data-category="mountains"] .category-title {
+  color: #8fd6ff;
+  text-shadow: 0 0 14px rgba(143,214,255,0.5);
+}
+
+.category-block[data-category="ocean"] .category-title {
+  color: #5fe0ff;
+  text-shadow: 0 0 14px rgba(95,224,255,0.5);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.gallery-item.hidden {
+  display: none;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,255,200,0.2);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 14px;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.35s ease;
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.overlay-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.overlay-cat {
+  font-size: 0.7rem;
+  color: #7fffd4;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ---------- LIGHTBOX ---------- */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.94);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+.lightbox.active {
+  display: flex;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 85%;
+  max-height: 85%;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 65vh;
+  border-radius: 12px;
+  box-shadow: 0 0 50px rgba(127,255,212,0.25);
+  transition: filter 0.3s ease;
+}
+
+.lightbox-caption {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #eee;
+  font-size: 1rem;
+}
+
+.lightbox-counter {
+  color: #7fffd4;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.close-btn {
+  position: absolute;
+  top: 25px;
+  right: 40px;
+  font-size: 2.5rem;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close-btn:hover {
+  color: #ff5fa2;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 15px;
+  user-select: none;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.nav-btn:hover {
+  color: #7fffd4;
+  transform: translateY(-50%) scale(1.15);
+}
+
+.prev-btn {
+  left: 20px;
+}
+
+.next-btn {
+  right: 20px;
+}
+
+/* ---------- LIGHTBOX IMAGE FILTERS (photo edit options) ---------- */
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-opt {
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(127,255,212,0.25);
+  background: rgba(18,18,30,0.7);
+  color: #ddd;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.filter-opt:hover {
+  border-color: rgba(127,255,212,0.6);
+  box-shadow: 0 0 10px rgba(127,255,212,0.2);
+}
+
+.filter-opt.active {
+  background: linear-gradient(145deg, #ff9f43, #e8850f);
+  color: #1a1200;
+  border-color: transparent;
+  box-shadow: 0 0 14px rgba(255,159,67,0.5);
+}
+
+#lightbox-img.f-bw {
+  filter: grayscale(100%) contrast(1.05);
+}
+
+#lightbox-img.f-vivid {
+  filter: saturate(1.8) contrast(1.15) brightness(1.05);
+}
+
+#lightbox-img.f-sepia {
+  filter: sepia(0.75) saturate(1.3) brightness(0.95);
+}
+
+#lightbox-img.f-cool {
+  filter: hue-rotate(180deg) saturate(1.4) brightness(0.95) contrast(1.05);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 600px) {
+  .page-header {
+    height: 260px;
+  }
+  .brand {
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+  }
+  .page-header h1 {
+    font-size: 1.8rem;
+  }
+  .category-block {
+    padding: 18px;
+  }
+  .filter-btn {
+    padding: 8px 14px;
+    font-size: 0.75rem;
+  }
+  .filter-opt {
+    padding: 5px 12px;
+    font-size: 0.7rem;
+  }
+}
